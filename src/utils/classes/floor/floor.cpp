@@ -2,23 +2,13 @@
 
 void Floor::Init(Camera *camera_){
     camera = camera_;
-    float planeVertices[] = {
-        // positions              // texcoords
-         20.0f, -0.5f,  40.0f,     10.0f, 10.0f,
-        -20.0f, -0.5f,  40.0f,     0.0f, 10.0f,
-        -20.0f, -0.5f, -40.0f,     0.0f, 0.0f,
-
-         20.0f, -0.5f,  40.0f,    10.0f, 10.0f,
-        -20.0f, -0.5f, -40.0f,    0.0f, 0.0f,
-         20.0f, -0.5f, -40.0f,    10.0f, 0.0f
-    };
     float vertex[] = {
         -20.0f, -0.5f, -40.0f,  0.0f, 0.0f,
-         20.0f, -0.5f, -40.0f,  1.0f, 0.0f,
-         20.0f, -0.5f,  40.0f,  1.0f, 1.0f,
+         20.0f, -0.5f, -40.0f,  10.0f, 0.0f,
+         20.0f, -0.5f,  40.0f,  10.0f, 10.0f,
 
-         20.0f, -0.5,   40.0f,  1.0f, 1.0f,
-        -20.0f, -0.5f,  40.0f,  0.0f, 1.0f,
+         20.0f, -0.5,   40.0f,  10.0f, 10.0f,
+        -20.0f, -0.5f,  40.0f,  0.0f, 10.0f,
         -20.0f, -0.5,  -40.0f,  0.0f, 0.0f,
 
     };
@@ -39,7 +29,7 @@ void Floor::Init(Camera *camera_){
     
     this->shader= new Shader("./shader/square/floor.vs" ,"./shader/square/floor.fs");
     shader->use();
-    this->woodTexture= Textures::loadTexture("./img/white.jpg");
+    this->woodTexture= Textures::loadTexture("./img/wood.png");
     //woodTexture = loadTexture("./img/wood.png", false) ;
     this->shader->setInt("texture1", 0);
 }
