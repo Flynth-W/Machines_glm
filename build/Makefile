@@ -13,7 +13,11 @@ OBJS = ../src/main.o \
 	   ../src/utils/classes/Draw/tank/undercarriage/undercarriage.o \
 	   ../src/utils/classes/Draw/tank/undercarriage/guide/guide.o  \
 	   ../src/utils/classes/Draw/tank/undercarriage/trackShoes/trackShoes.o \
-	   ../src/utils/classes/Draw/tank/undercarriage/trackShoes/trackShoe/trackShoe.o 
+	   ../src/utils/classes/Draw/tank/undercarriage/trackShoes/trackShoe/trackShoe.o \
+	   ../src/utils/classes/Draw/tank/head/head.o   ../src/utils/classes/Draw/tank/limb/limb.o \
+	   ../src/utils/classes/Draw/bullet/bullet.o \
+	   ../src/utils/classes/bullet/bullet.o \
+	   ../src/utils/classes/sysBullets/sysBullet.o
 	 	   
 
 
