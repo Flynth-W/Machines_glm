@@ -8,7 +8,12 @@ OBJS = ../src/main.o \
 	   ../src/utils/classes/floor/floor.o \
 	   ../src/utils/classes/textures/textures.o \
 	   ../src/utils/classes/Tank/tank.o \
-	   ../src/utils/classes/Draw/tank/tank.o 
+	   ../src/utils/classes/Draw/tank/tank.o \
+	   ../src/utils/classes/Draw/tank/body/body.o \
+	   ../src/utils/classes/Draw/tank/undercarriage/undercarriage.o \
+	   ../src/utils/classes/Draw/tank/undercarriage/guide/guide.o  \
+	   ../src/utils/classes/Draw/tank/undercarriage/trackShoes/trackShoes.o \
+	   ../src/utils/classes/Draw/tank/undercarriage/trackShoes/trackShoe/trackShoe.o 
 	 	   
 
 
