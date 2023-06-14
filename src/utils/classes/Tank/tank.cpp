@@ -1,7 +1,7 @@
 #include "tank.hpp"
 void Tank::events(){
-    float translationSpeed = 1.5 * *this->deltaTime;
-    float rotationSpeed = 2.0 * *this->deltaTime;
+    float translationSpeed = 0.5 * *this->deltaTime;
+    float rotationSpeed = 0.5 * *this->deltaTime;
 
     // up
     if( Event::getIfStateKey(keys, GLFW_KEY_W,ButtonState::Pressed ,ButtonState::Repeat) ){
@@ -30,14 +30,16 @@ void Tank::events(){
 }
 
 void Tank::view(){
+
+
     glm::mat4 model = this->drawTank.getModel();
 
     glm::mat4 front = glm::mat4(model);
-              front = glm::translate(front, glm::vec3(0.0,1.5,-2.0));
+              front = glm::translate(front, glm::vec3(0.0,0,0.0));
     glm::vec3 cameraFront = glm::vec3(front[3][0],front[3][1],front[3][2]);
     
     glm::mat4 position  = glm::mat4(model);
-              position  = glm::translate(position, glm::vec3( 0.0 , 5.0 , 8.0));
+              position  = glm::translate(position, glm::vec3( -1.5 , 0.5 , 1.5));
     glm::vec3 cameraPos = glm::vec3(position[3][0] , position[3][1] , position[3][2]);
 
     glm::vec3 cameraUp = glm::vec3(0.0,1.0,0.0);
@@ -45,7 +47,7 @@ void Tank::view(){
 }
 
 void Tank::Init(){
-    this->position=glm::vec3(0.0,0.0,0.0);
+    this->position=glm::vec3(0.0,-0.35,0.0);
 
     this->drawTank.setCamera(this->camera);
     this->drawTank.Init(&this->position);

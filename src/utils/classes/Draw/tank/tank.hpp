@@ -1,10 +1,16 @@
 #pragma once
 #include "../../shader.hpp"
 #include "../../camera/camera.hpp"
+#include "./body/body.hpp"
+#include "./undercarriage/undercarriage.hpp"
+
 
 class DrawTank{   
     private:
         Camera *camera;
+        DrawBodyOfTank body;
+        DrawUndercarriage undercarriageLeft;
+        DrawUndercarriage undercarriageRigth;
     public:
         void Init(glm::vec3 *position);
         void Update();
@@ -14,6 +20,6 @@ class DrawTank{
         glm::mat4 getModel();
 
         void move(float translate);
-        void rotate(double angle);
+        void rotate(float angle);
         void headRotate(double angle);
 };
