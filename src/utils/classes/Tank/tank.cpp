@@ -27,6 +27,28 @@ void Tank::events(){
             this->drawTank.rotate(rotationSpeed);
         }
     }
+    // head rotate
+    // left
+    if( Event::getIfStateKey(keys, GLFW_KEY_J,ButtonState::Pressed ,ButtonState::Repeat) ){
+        this->drawTank.headRotate(rotationSpeed);
+    }
+    // right
+    if( Event::getIfStateKey(keys, GLFW_KEY_L,ButtonState::Pressed ,ButtonState::Repeat) ){
+        this->drawTank.headRotate(-rotationSpeed);
+    }
+    // gun rotate
+    // left
+    if( Event::getIfStateKey(keys, GLFW_KEY_I,ButtonState::Pressed ,ButtonState::Repeat) ){
+        this->drawTank.gunRotate(rotationSpeed);
+    }
+    // right
+    if( Event::getIfStateKey(keys, GLFW_KEY_K,ButtonState::Pressed ,ButtonState::Repeat) ){
+        this->drawTank.gunRotate(-rotationSpeed);
+    }
+    //shoot
+    if( Event::getIfStateKey(keys, GLFW_KEY_O,ButtonState::Released) ){
+        this->drawTank.shootGun();
+    }
 }
 
 void Tank::view(){
@@ -39,7 +61,7 @@ void Tank::view(){
     glm::vec3 cameraFront = glm::vec3(front[3][0],front[3][1],front[3][2]);
     
     glm::mat4 position  = glm::mat4(model);
-              position  = glm::translate(position, glm::vec3( -1.5 , 0.5 , 1.5));
+              position  = glm::translate(position, glm::vec3( -3.0 , 1.5 , 2.5));
     glm::vec3 cameraPos = glm::vec3(position[3][0] , position[3][1] , position[3][2]);
 
     glm::vec3 cameraUp = glm::vec3(0.0,1.0,0.0);
@@ -50,7 +72,13 @@ void Tank::Init(){
     this->position=glm::vec3(0.0,-0.35,0.0);
 
     this->drawTank.setCamera(this->camera);
+    this->drawTank.setDeltaTime(this->deltaTime);
     this->drawTank.Init(&this->position);
+    Event::setKey(keys, GLFW_KEY_J);
+    Event::setKey(keys, GLFW_KEY_L);
+    Event::setKey(keys, GLFW_KEY_I);
+    Event::setKey(keys, GLFW_KEY_K);
+    Event::setKey(keys, GLFW_KEY_O);
 }
 void Tank::Update(){
     this->events();
