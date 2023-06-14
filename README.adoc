@@ -2,7 +2,11 @@
 
     movement of machines
 
-image::./movie.gif[Sunset]
+
+
+*   tank
+
+image::./tank.png[Sunset]
 == Libraries
 
 *   GLFW
