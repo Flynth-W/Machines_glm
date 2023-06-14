@@ -1,0 +1,21 @@
+= Machines
+
+    movement of machines
+
+image::./movie.gif[Sunset]
+== Libraries
+
+*   GLFW
+*   OpenGl/glew
+*   glm
+
+
+== Compile
+
+arch linux
+
+    install packages:
+        $ pacman -S glew glm glfw-x11 
+    Compile with Makefile
+        $ cd ./build/
+        $ make 
